@@ -9,5 +9,11 @@
     "api/learn.py": {
       "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/game/:path*",
+      "destination": "/api/game"
+    }
+  ]
 }
