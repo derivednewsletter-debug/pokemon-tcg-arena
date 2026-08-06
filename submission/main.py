@@ -24,16 +24,35 @@ import os
 from agent import Agent
 
 # ---- deck -----------------------------------------------------------------
+def _deck_candidates() -> list[str]:
+    """Candidate deck.csv paths.
+
+    The Kaggle harness loads this file by ``exec`` in a fresh namespace,
+    so ``__file__`` is NOT defined on the platform (only locally). Build a
+    fallback chain: next to this file (local), cwd, then the Kaggle path.
+    """
+    dirs: list[str] = []
+    try:
+        dirs.append(os.path.dirname(os.path.abspath(__file__)))
+    except NameError:
+        pass  # exec'd by kaggle_environments -> no __file__
+    dirs.append(os.getcwd())
+    dirs.append("/kaggle_simulations/agent/")
+    seen: list[str] = []
+    for d in dirs:
+        p = os.path.join(d, "deck.csv")
+        if p not in seen:
+            seen.append(p)
+    return seen
+
+
 def _load_deck() -> list[int]:
-    here = os.path.dirname(os.path.abspath(__file__))
-    path = os.path.join(here, "deck.csv")
-    if not os.path.exists(path):
-        path = "/kaggle_simulations/agent/" + os.path.basename(path)
-    if os.path.exists(path):
-        with open(path) as fh:
-            ids = [int(x) for x in fh.read().split() if x.strip()]
-        if len(ids) == 60:
-            return ids
+    for path in _deck_candidates():
+        if os.path.exists(path):
+            with open(path) as fh:
+                ids = [int(x) for x in fh.read().split() if x.strip()]
+            if len(ids) == 60:
+                return ids
     from deck import DECK
     return DECK# Tunable policy knobs (set via environment for local experiments).
 GO_FIRST = os.environ.get("PTCG_GO_FIRST", "1") != "0"
@@ -65,7 +84,9 @@ if __name__ == "__main__":
     # Local smoke test: play one game against a random opponent.
     import random
     import sys
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    here = os.path.dirname(os.path.abspath(__file__))
+    if here not in sys.path:
+        sys.path.insert(0, here)
     from cg.game import battle_start, battle_select, battle_finish
 
     deck = _load_deck()

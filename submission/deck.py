@@ -59,7 +59,11 @@ assert len(DECK) == 60, f"deck has {len(DECK)} cards, expected 60"
 def write_deck_csv(path: str | None = None) -> str:
     """Write the deck to ``deck.csv`` (next to this file by default)."""
     if path is None:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deck.csv")
+        try:
+            here = os.path.dirname(os.path.abspath(__file__))
+        except NameError:
+            here = os.getcwd()
+        path = os.path.join(here, "deck.csv")
     with open(path, "w") as fh:
         fh.write("\n".join(str(c) for c in DECK) + "\n")
     return path
