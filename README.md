@@ -2,6 +2,8 @@
 
 > Repo: https://github.com/derivednewsletter-debug/pokemon-tcg-arena
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fderivednewsletter-debug%2Fpokemon-tcg-arena)
+
 A complete Pokémon TCG AI: a competitive **engine-search agent** (built for
 the Kaggle *Pokémon TCG AI Battle* competition) plus a **playable web arena**
 where humans battle the AI — and every game teaches it how humans play.
@@ -57,6 +59,18 @@ surface):
 
 ## Deploy to Vercel
 
+**One click:**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fderivednewsletter-debug%2Fpokemon-tcg-arena)
+
+The button imports this repo into Vercel and deploys it — no local setup
+needed. Or from the CLI:
+
+```bash
+vercel login        # one-time
+vercel --prod       # from the repo root
+```
+
 1. Push this repo to GitHub, then **Import** it in Vercel (root directory =
    repo root, framework = Other). `vercel.json` wires `api/*.py` as Python
    functions and `public/` is served at `/` automatically.
@@ -70,6 +84,13 @@ surface):
    shared across instances.
 4. Deploy. Open the URL, play a few games, then check **AI Brain**
    (`/stats`) — it fills in as games finish.
+
+> ⚠️ **Why GitHub alone won't run the game:** the arena needs the Python
+> backend (`/api/game/*` — real rules engine, lookahead, learning). GitHub
+> Pages serves static files only, so the page loads but every API call 404s
+> (you'll see `Failed to load resource: 404` in the console and the deck
+> pickers stay empty). Deploy on Vercel (button above) or run locally
+> (below) and it works.
 
 > Serverless note: a live game lives in the memory of one server instance,
 > so it can expire if the instance goes to sleep mid-match. Finished games
