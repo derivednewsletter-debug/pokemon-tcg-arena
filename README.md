@@ -1,5 +1,7 @@
 # Pokémon TCG Arena — AI agent + playable web arena
 
+> Repo: https://github.com/derivednewsletter-debug/pokemon-tcg-arena
+
 A complete Pokémon TCG AI: a competitive **engine-search agent** (built for
 the Kaggle *Pokémon TCG AI Battle* competition) plus a **playable web arena**
 where humans battle the AI — and every game teaches it how humans play.
