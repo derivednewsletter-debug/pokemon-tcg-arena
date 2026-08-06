@@ -71,6 +71,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._proxy("POST")
         return super().do_POST()
 
+    def end_headers(self):
+        # dev only: never let the browser cache JSON/HTML we are actively editing
+        self.send_header("Cache-Control", "no-store")
+        super().end_headers()
+
     def log_message(self, *a):  # silence
         pass
 

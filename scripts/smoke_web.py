@@ -61,20 +61,53 @@ def play_one(client, human_deck: str, ai_deck: str, difficulty: str, label: str)
     return view
 
 
+def play_custom(client, deck_ids, ai_deck, difficulty):
+    """Play a game where the human uses a fully custom deck list."""
+    r = client.post("/api/game/new", json={
+        "custom_deck": deck_ids, "ai_deck": ai_deck, "difficulty": difficulty})
+    assert r.status_code == 200, f"custom new failed: {r.status_code} {r.data[:300]}"
+    view = r.get_json()
+    steps = 0
+    while not view.get("over"):
+        menu = view.get("menu")
+        assert menu is not None, "no menu and not over"
+        picks = pick_for_menu(menu)
+        r = client.post("/api/game/act", json={"game_id": view["game_id"], "picks": picks})
+        assert r.status_code == 200, f"custom act failed: {r.status_code} {r.data[:300]}"
+        view = r.get_json()
+        steps += 1
+        assert steps < 400, "custom game did not terminate"
+    assert view["decks"]["human"] == "custom", "custom deck id not recorded"
+    return view
+
+
 def main():
     games = int(sys.argv[1]) if len(sys.argv) > 1 else 2
     client = app.test_client()
     wins = 0
     total_turns = 0
+    deck_ids = ["mega_aboma", "palafin", "mega_lucario", "mega_dragonite",
+                "mega_emboar", "luxray", "mega_gengar", "mega_venusaur",
+                "greninja", "hydreigon"]
     for g in range(games):
-        deck = ["mega_aboma", "palafin", "mega_lucario"][g % 3]
+        deck = deck_ids[g % len(deck_ids)]
         view = play_one(client, deck, "mega_aboma", "medium", f"game {g}")
         wins += 1 if view["winner"] == 1 else 0
         total_turns += view["turn"]
-        print(f"game {g}: winner={view['winner']} turns={view['turn']} "
-              f"human_prizes_left={view['human_prizes_left']} ai_prizes_left={view['ai_prizes_left']}")
-        print("  last log lines:", view["log"][-3:])
-    print(f"\nAI wins {wins}/{games}, avg turns {total_turns / max(games, 1):.1f}")
+        print(f"game {g} ({deck}): winner={view['winner']} turns={view['turn']}")
+
+    # custom deck: play one full game with a hand-built deck list
+    from api._decks import get_deck
+    custom = get_deck("luxray")
+    cv = play_custom(client, custom, "palafin", "easy")
+    print(f"custom deck game: winner={cv['winner']} turns={cv['turn']} "
+          f"(human deck recorded as {cv['decks']['human']})")
+
+    # invalid decks must be rejected with 400
+    for bad in (["1"] * 60, [], list(range(60)), [3] * 60):
+        r = client.post("/api/game/new", json={"custom_deck": bad, "ai_deck": "mega_aboma"})
+        assert r.status_code == 400, f"invalid deck {bad[:3]}... not rejected ({r.status_code})"
+    print("invalid custom decks rejected (400) ✓")
 
     # learning endpoint
     r = learn_app.test_client().get("/api/learn")

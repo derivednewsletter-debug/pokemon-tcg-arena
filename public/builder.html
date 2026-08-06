@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deck Builder — Pokémon TCG Arena</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span class="logo-bolt">⚡</span> TCG&nbsp;ARENA</div>
+    <nav class="nav">
+      <a href="/" class="nav-link">Play</a>
+      <a href="stats.html" class="nav-link">AI Brain</a>
+      <a href="builder.html" class="nav-link active">Deck Builder</a>
+    </nav>
+  </header>
+
+  <section class="screen builder-screen">
+    <div class="builder-head">
+      <div>
+        <h1 class="hero-title" style="margin:0 0 6px">Deck <span class="grad">Builder</span></h1>
+        <p class="hero-sub" style="margin:0">Build any 60-card deck from the full pool. Rules are enforced
+          as you go — 60 cards, max 4 copies, at least 1 Basic Pokémon, 1 ACE SPEC.</p>
+      </div>
+      <div id="builder-status" class="builder-status">0 / 60 cards</div>
+    </div>
+
+    <div class="builder-layout">
+      <!-- pool -->
+      <div class="panel pool-panel">
+        <div class="pool-tools">
+          <input id="pool-search" class="pool-search" type="search" placeholder="Search cards… (e.g. 'Palafin', 'Draw')">
+          <div id="pool-filters" class="chip-row"></div>
+          <div id="pool-energy" class="chip-row"></div>
+        </div>
+        <div id="pool-grid" class="pool-grid"></div>
+        <div id="pool-count" class="pool-count"></div>
+      </div>
+
+      <!-- your deck -->
+      <div class="panel deck-panel">
+        <div class="deck-panel-head">
+          <h3>🃏 Your deck</h3>
+          <div class="deck-actions">
+            <button id="random-btn" class="btn-ghost">🎲 Randomize</button>
+            <button id="clear-btn" class="btn-ghost">Clear</button>
+          </div>
+        </div>
+        <div id="deck-breakdown" class="deck-breakdown"></div>
+        <div id="deck-errors" class="deck-errors"></div>
+        <div id="deck-list" class="deck-list"></div>
+        <div class="deck-footer">
+          <button id="save-btn" class="btn-primary confirm-btn" disabled>⚔️ Save &amp; Battle</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="builder.js"></script>
+</body>
+</html>

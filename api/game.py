@@ -23,7 +23,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import _paths  # noqa: F401  (sys.path bootstrap)
-from _decks import all_decks, get_deck
+from _decks import all_decks, get_deck, validate_deck
 from _orchestrator import DIFFICULTIES, GameSession
 from _telemetry import store
 
@@ -64,25 +64,40 @@ def meta():
     decks = all_decks()
     return jsonify({
         "decks": [{"id": d["id"], "name": d["name"], "blurb": d["blurb"],
-                   "cards": d["cards"]} for d in decks],
+                   "type": d.get("type", ""), "cards": d["cards"]} for d in decks],
         "difficulties": [
             {"id": "easy", "name": "Easy", "blurb": "No lookahead — pure heuristics."},
             {"id": "medium", "name": "Medium", "blurb": "Light engine-search lookahead."},
             {"id": "hard", "name": "Hard", "blurb": "Deep multi-world lookahead + learned opponent model."},
         ],
         "engine": "Official Pokémon TCG AI Battle engine (cg)",
-        "agent": "Finizen Turbo / Mega Abomasnow — engine-search lookahead agent",
+        "agent": "Engine-search lookahead agent + learned opponent model",
+        "custom_deck": {"max": 60, "max_copies": 4, "min_basic": 1},
     })
 
 
 @app.route("/api/game/new", methods=["POST"])
 def new_game():
     body = request.get_json(silent=True) or {}
-    human_deck_id = body.get("human_deck") or "mega_aboma"
-    ai_deck_id = body.get("ai_deck") or "mega_aboma"
     difficulty = body.get("difficulty") or "medium"
+
+    # Player's deck: either a curated id or a full custom list.
+    custom = body.get("custom_deck")
+    if custom is not None:
+        ok, reason = validate_deck(custom)
+        if not ok:
+            return jsonify({"error": reason}), 400
+        human_deck = list(custom)
+        human_deck_id = "custom"
+    else:
+        human_deck_id = body.get("human_deck") or "mega_aboma"
+        try:
+            human_deck = get_deck(human_deck_id)
+        except KeyError:
+            return jsonify({"error": "unknown deck id"}), 400
+
+    ai_deck_id = body.get("ai_deck") or "mega_aboma"
     try:
-        human_deck = get_deck(human_deck_id)
         ai_deck = get_deck(ai_deck_id)
     except KeyError:
         return jsonify({"error": "unknown deck id"}), 400

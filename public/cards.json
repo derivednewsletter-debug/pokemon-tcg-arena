@@ -1,5 +1,37 @@
 {
  "cards": {
+  "1": {
+   "id": 1,
+   "name": "Basic {G} Energy",
+   "type": "energy",
+   "energyType": 1,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "",
+   "rating": 10
+  },
+  "2": {
+   "id": 2,
+   "name": "Basic {R} Energy",
+   "type": "energy",
+   "energyType": 2,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "",
+   "rating": 10
+  },
   "3": {
    "id": 3,
    "name": "Basic {W} Energy",
@@ -13,7 +45,24 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": ""
+   "text": "",
+   "rating": 10
+  },
+  "4": {
+   "id": 4,
+   "name": "Basic {L} Energy",
+   "type": "energy",
+   "energyType": 4,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "",
+   "rating": 10
   },
   "6": {
    "id": 6,
@@ -28,7 +77,177 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": ""
+   "text": "",
+   "rating": 10
+  },
+  "7": {
+   "id": 7,
+   "name": "Basic {D} Energy",
+   "type": "energy",
+   "energyType": 7,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "",
+   "rating": 10
+  },
+  "33": {
+   "id": 33,
+   "name": "Froakie",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 60,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Flock",
+     "damage": 0,
+     "cost": [
+      3
+     ],
+     "text": "Search your deck for up to 2 Froakie and put them onto your Bench. Then, shuffle your deck."
+    },
+    {
+     "name": "Flop",
+     "damage": 10,
+     "cost": [
+      3
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 76.1
+  },
+  "34": {
+   "id": 34,
+   "name": "Frogadier",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 90,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Froakie",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Numbing Water",
+     "damage": 20,
+     "cost": [
+      3
+     ],
+     "text": "Flip a coin. If heads, your opponent\u2019s Active Pok\u00e9mon is now Paralyzed."
+    }
+   ],
+   "text": "",
+   "rating": 127.4
+  },
+  "40": {
+   "id": 40,
+   "name": "Greninja ex",
+   "type": "pokemon",
+   "energyType": 6,
+   "hp": 310,
+   "stage": "stage2",
+   "ex": true,
+   "mega": false,
+   "evolvesFrom": "Frogadier",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Shinobi Blade",
+     "damage": 170,
+     "cost": [
+      3
+     ],
+     "text": "You may search your deck for a card and put it into your hand. Then, shuffle your deck."
+    },
+    {
+     "name": "Mirage Barrage",
+     "damage": 0,
+     "cost": [
+      3,
+      0,
+      0
+     ],
+     "text": "Discard 2 Energy from this Pok\u00e9mon. This attack does 120 damage to 2 of your opponent\u2019s Pok\u00e9mon.\u00a0(Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+    }
+   ],
+   "text": "",
+   "rating": 365.1
+  },
+  "59": {
+   "id": 59,
+   "name": "Gastly",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 60,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Mysterious Beam",
+     "damage": 0,
+     "cost": [
+      7
+     ],
+     "text": "Flip a coin. If heads, discard an Energy from your opponent\u2019s Active Pok\u00e9mon."
+    },
+    {
+     "name": "Suffocating Gas",
+     "damage": 30,
+     "cost": [
+      7,
+      7
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 81.8
+  },
+  "60": {
+   "id": 60,
+   "name": "Haunter",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 90,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Gastly",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Super Poison Breath",
+     "damage": 30,
+     "cost": [
+      7,
+      7
+     ],
+     "text": "Your opponent\u2019s Active Pok\u00e9mon is now Poisoned."
+    }
+   ],
+   "text": "",
+   "rating": 121.7
   },
   "105": {
    "id": 105,
@@ -52,7 +271,8 @@
      "text": "During your next turn, this Pok\u00e9mon can\u2019t use attacks."
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 100.7
   },
   "106": {
    "id": 106,
@@ -77,7 +297,8 @@
      "text": ""
     }
    ],
-   "text": "Zero to Hero: Once during your turn, when this Pok\u00e9mon moves from the Active Spot to the Bench, you may search your deck for a Palafin {ex} and switch it with this Pok\u00e9mon. Any attached cards, damage counters, Special Co"
+   "text": "Zero to Hero: Once during your turn, when this Pok\u00e9mon moves from the Active Spot to the Bench, you may search your deck for a Palafin {ex} and switch it with this Pok\u00e9mon. Any attached cards, damage counters, Special Co",
+   "rating": 123.2
   },
   "107": {
    "id": 107,
@@ -101,7 +322,262 @@
      "text": "During your next turn, this Pok\u00e9mon can\u2019t use attacks."
     }
    ],
-   "text": "Hero\u2019s Spirit: Put this Pok\u00e9mon into play only with the effect of Palafin\u2019s Zero to Hero Ability."
+   "text": "Hero\u2019s Spirit: Put this Pok\u00e9mon into play only with the effect of Palafin\u2019s Zero to Hero Ability.",
+   "rating": 431.9
+  },
+  "227": {
+   "id": 227,
+   "name": "Deino",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 70,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Stomp Off",
+     "damage": 0,
+     "cost": [
+      7
+     ],
+     "text": "Discard the top card of your opponent\u2019s deck."
+    },
+    {
+     "name": "Bite",
+     "damage": 20,
+     "cost": [
+      7,
+      0
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 77.7
+  },
+  "228": {
+   "id": 228,
+   "name": "Zweilous",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 100,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Deino",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Stomp Off",
+     "damage": 0,
+     "cost": [
+      7
+     ],
+     "text": "Discard the top 2 cards of your opponent\u2019s deck."
+    },
+    {
+     "name": "Darkness Fang",
+     "damage": 60,
+     "cost": [
+      7,
+      0,
+      0
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 129.0
+  },
+  "229": {
+   "id": 229,
+   "name": "Hydreigon ex",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 330,
+   "stage": "stage2",
+   "ex": true,
+   "mega": false,
+   "evolvesFrom": "Zweilous",
+   "retreat": 3,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Crashing Headbutt",
+     "damage": 200,
+     "cost": [
+      7,
+      0
+     ],
+     "text": "Discard the top 3 cards of your opponent\u2019s deck."
+    },
+    {
+     "name": "Obsidian",
+     "damage": 130,
+     "cost": [
+      5,
+      7,
+      8,
+      0
+     ],
+     "text": "This attack also does 130 damage to 2 of your opponent\u2019s Benched Pok\u00e9mon. (Don\u2019t apply Weakness and Resistance for Benched Pok\u00e9mon.)"
+    }
+   ],
+   "text": "",
+   "rating": 287.8
+  },
+  "567": {
+   "id": 567,
+   "name": "Tepig",
+   "type": "pokemon",
+   "energyType": 2,
+   "hp": 70,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Tackle",
+     "damage": 10,
+     "cost": [
+      2
+     ],
+     "text": ""
+    },
+    {
+     "name": "Rollout",
+     "damage": 30,
+     "cost": [
+      2,
+      2
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 83.5
+  },
+  "568": {
+   "id": 568,
+   "name": "Pignite",
+   "type": "pokemon",
+   "energyType": 2,
+   "hp": 110,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Tepig",
+   "retreat": 3,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Combustion",
+     "damage": 30,
+     "cost": [
+      2
+     ],
+     "text": ""
+    },
+    {
+     "name": "Heat Crash",
+     "damage": 80,
+     "cost": [
+      2,
+      2,
+      0
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 138.3
+  },
+  "650": {
+   "id": 650,
+   "name": "Bulbasaur",
+   "type": "pokemon",
+   "energyType": 1,
+   "hp": 80,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Bind Down",
+     "damage": 10,
+     "cost": [
+      1
+     ],
+     "text": "During your opponent\u2019s next turn, the Defending Pok\u00e9mon can\u2019t retreat."
+    }
+   ],
+   "text": "",
+   "rating": 79.3
+  },
+  "651": {
+   "id": 651,
+   "name": "Ivysaur",
+   "type": "pokemon",
+   "energyType": 1,
+   "hp": 110,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Bulbasaur",
+   "retreat": 3,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Razor Leaf",
+     "damage": 60,
+     "cost": [
+      1,
+      1
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 142.1
+  },
+  "652": {
+   "id": 652,
+   "name": "Mega Venusaur ex",
+   "type": "pokemon",
+   "energyType": 1,
+   "hp": 380,
+   "stage": "stage2",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Ivysaur",
+   "retreat": 4,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Jungle Dump",
+     "damage": 240,
+     "cost": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "text": "Heal 30 damage from this Pok\u00e9mon."
+    }
+   ],
+   "text": "Solar Transfer: As often as you like during your turn, you may use this Ability. Move a Basic {G} Energy from 1 of your Pok\u00e9mon to another of your Pok\u00e9mon.",
+   "rating": 249.8
   },
   "677": {
    "id": 677,
@@ -125,7 +601,8 @@
      "text": "During your next turn, this Pok\u00e9mon can\u2019t use Accelerating Stab."
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 102.3
   },
   "678": {
    "id": 678,
@@ -158,7 +635,8 @@
      "text": "During your next turn, this Pok\u00e9mon can\u2019t use Mega Brave."
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 299.6
   },
   "721": {
    "id": 721,
@@ -192,7 +670,8 @@
      "text": "Discard 2 Energy from this Pok\u00e9mon."
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 128.8
   },
   "722": {
    "id": 722,
@@ -225,7 +704,8 @@
      "text": ""
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 86.7
   },
   "723": {
    "id": 723,
@@ -260,7 +740,226 @@
      "text": "During your opponent\u2019s next turn, this Pok\u00e9mon takes 30 less damage from attacks (after applying Weakness and Resistance)."
     }
    ],
-   "text": ""
+   "text": "",
+   "rating": 222.7
+  },
+  "772": {
+   "id": 772,
+   "name": "Mega Gengar ex",
+   "type": "pokemon",
+   "energyType": 7,
+   "hp": 350,
+   "stage": "stage2",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Haunter",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Void Gale",
+     "damage": 230,
+     "cost": [
+      7,
+      7
+     ],
+     "text": "Move an Energy from this Pok\u00e9mon to 1 of your Benched Pok\u00e9mon."
+    }
+   ],
+   "text": "Shadowy Concealment: If 1 of your {D} Pok\u00e9mon is Knocked Out by damage from an attack from your opponent\u2019s Pok\u00e9mon {ex}, that player takes 1 fewer Prize card. The effect of Shadowy Concealment doesn\u2019t stack.",
+   "rating": 308.2
+  },
+  "902": {
+   "id": 902,
+   "name": "Dratini",
+   "type": "pokemon",
+   "energyType": 9,
+   "hp": 80,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Headbutt",
+     "damage": 30,
+     "cost": [
+      3,
+      4
+     ],
+     "text": ""
+    }
+   ],
+   "text": "",
+   "rating": 85.0
+  },
+  "903": {
+   "id": 903,
+   "name": "Dragonair",
+   "type": "pokemon",
+   "energyType": 9,
+   "hp": 100,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Dratini",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Tail Snap",
+     "damage": 60,
+     "cost": [
+      3,
+      4
+     ],
+     "text": ""
+    }
+   ],
+   "text": "Evolutionary Guidance: Once during your turn, if this Pok\u00e9mon has any Energy attached, you may use this Ability. Search your deck for an Evolution Pok\u00e9mon, reveal it, and put it into your hand. Then, shuffle your deck.",
+   "rating": 140.5
+  },
+  "904": {
+   "id": 904,
+   "name": "Mega Dragonite ex",
+   "type": "pokemon",
+   "energyType": 9,
+   "hp": 370,
+   "stage": "stage2",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Dragonair",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Ryuno Glide",
+     "damage": 330,
+     "cost": [
+      3,
+      4,
+      4
+     ],
+     "text": "Discard 2 Energy from this Pok\u00e9mon."
+    }
+   ],
+   "text": "Sky Transport: Once during your turn, you may use this Ability. Switch your Active Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+   "rating": 305.7
+  },
+  "932": {
+   "id": 932,
+   "name": "Mega Emboar ex",
+   "type": "pokemon",
+   "energyType": 2,
+   "hp": 380,
+   "stage": "stage2",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Pignite",
+   "retreat": 4,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Crimson Blast",
+     "damage": 320,
+     "cost": [
+      2,
+      2,
+      0
+     ],
+     "text": "This Pok\u00e9mon also does 60 damage to itself."
+    }
+   ],
+   "text": "",
+   "rating": 303.5
+  },
+  "954": {
+   "id": 954,
+   "name": "Luxray ex",
+   "type": "pokemon",
+   "energyType": 4,
+   "hp": 310,
+   "stage": "stage2",
+   "ex": true,
+   "mega": false,
+   "evolvesFrom": "Luxio",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Piercing Gaze",
+     "damage": 120,
+     "cost": [
+      0,
+      0
+     ],
+     "text": "Your opponent reveals their hand, and you discard a card you find there."
+    },
+    {
+     "name": "Volt Strike",
+     "damage": 250,
+     "cost": [
+      4,
+      4
+     ],
+     "text": "Discard all Energy from this Pok\u00e9mon."
+    }
+   ],
+   "text": "",
+   "rating": 313.4
+  },
+  "1035": {
+   "id": 1035,
+   "name": "Shinx",
+   "type": "pokemon",
+   "energyType": 4,
+   "hp": 70,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Double Scratch",
+     "damage": 0,
+     "cost": [
+      4
+     ],
+     "text": "Flip 2 coins. This attack does 10 damage for each heads."
+    }
+   ],
+   "text": "",
+   "rating": 66.2
+  },
+  "1036": {
+   "id": 1036,
+   "name": "Luxio",
+   "type": "pokemon",
+   "energyType": 4,
+   "hp": 90,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Shinx",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Static Shock",
+     "damage": 40,
+     "cost": [
+      4,
+      0
+     ],
+     "text": ""
+    }
+   ],
+   "text": "Fighting Roar: If your opponent\u2019s Active Pok\u00e9mon is a Pok\u00e9mon {ex}, this Pok\u00e9mon can evolve during your first turn or the turn you play it.",
+   "rating": 127.4
   },
   "1077": {
    "id": 1077,
@@ -275,7 +974,24 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Roto-Stick: Look at the top 4 cards of your deck. You may reveal any number of Supporter cards you find there and put them into your hand. Shuffle the other cards back into your deck."
+   "text": "Roto-Stick: Look at the top 4 cards of your deck. You may reveal any number of Supporter cards you find there and put them into your hand. Shuffle the other cards back into your deck.",
+   "rating": 0.0
+  },
+  "1079": {
+   "id": 1079,
+   "name": "Rare Candy",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Rare Candy: Choose 1 of your Basic Pok\u00e9mon in play. If you have a Stage 2 card in your hand that evolves from that Pok\u00e9mon, put that card onto the Basic Pok\u00e9mon to evolve it, skipping the Stage 1. You can\u2019t use this card",
+   "rating": 0.0
   },
   "1082": {
    "id": 1082,
@@ -290,7 +1006,8 @@
    "retreat": 0,
    "aceSpec": true,
    "attacks": [],
-   "text": "Hyper Aroma: Search your deck for up to 3 Stage 1 Pok\u00e9mon, reveal them, and put them into your hand. Then, shuffle your deck."
+   "text": "Hyper Aroma: Search your deck for up to 3 Stage 1 Pok\u00e9mon, reveal them, and put them into your hand. Then, shuffle your deck.",
+   "rating": 8.0
   },
   "1086": {
    "id": 1086,
@@ -305,7 +1022,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Buddy-Buddy Poffin: Search your deck for up to 2 Basic Pok\u00e9mon with 70 HP or less and put them onto your Bench. Then, shuffle your deck."
+   "text": "Buddy-Buddy Poffin: Search your deck for up to 2 Basic Pok\u00e9mon with 70 HP or less and put them onto your Bench. Then, shuffle your deck.",
+   "rating": 8.0
   },
   "1102": {
    "id": 1102,
@@ -320,7 +1038,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Dusk Ball: Look at the bottom 7 cards of your deck. You may reveal a Pok\u00e9mon you find there and put it into your hand. Shuffle the other cards back into your deck."
+   "text": "Dusk Ball: Look at the bottom 7 cards of your deck. You may reveal a Pok\u00e9mon you find there and put it into your hand. Shuffle the other cards back into your deck.",
+   "rating": 0.0
   },
   "1119": {
    "id": 1119,
@@ -335,7 +1054,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Energy Search: Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck."
+   "text": "Energy Search: Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck.",
+   "rating": 8.0
   },
   "1121": {
    "id": 1121,
@@ -350,7 +1070,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Ultra Ball: You can use this card only if you discard 2 other cards from your hand.\n\nSearch your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Then, shuffle your deck."
+   "text": "Ultra Ball: You can use this card only if you discard 2 other cards from your hand.\n\nSearch your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Then, shuffle your deck.",
+   "rating": 8.0
   },
   "1122": {
    "id": 1122,
@@ -365,7 +1086,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Pok\u00e9gear 3.0: Look at the top 7 cards of your deck. You may reveal a Supporter card you find there and put it into your hand. Shuffle the other cards back into your deck."
+   "text": "Pok\u00e9gear 3.0: Look at the top 7 cards of your deck. You may reveal a Supporter card you find there and put it into your hand. Shuffle the other cards back into your deck.",
+   "rating": 0.0
   },
   "1156": {
    "id": 1156,
@@ -380,7 +1102,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Lucky Helmet: If the Pok\u00e9mon this card is attached to is in the Active Spot and is damaged by an attack from your opponent\u2019s Pok\u00e9mon (even if this Pok\u00e9mon is Knocked Out), draw 2 cards."
+   "text": "Lucky Helmet: If the Pok\u00e9mon this card is attached to is in the Active Spot and is damaged by an attack from your opponent\u2019s Pok\u00e9mon (even if this Pok\u00e9mon is Knocked Out), draw 2 cards.",
+   "rating": 6.0
   },
   "1192": {
    "id": 1192,
@@ -395,7 +1118,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Carmine: If you go first, you may use this card during your first turn.\n\nDiscard your hand and draw 5 cards."
+   "text": "Carmine: If you go first, you may use this card during your first turn.\n\nDiscard your hand and draw 5 cards.",
+   "rating": 15.0
   },
   "1227": {
    "id": 1227,
@@ -410,7 +1134,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Lillie's Determination: Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead."
+   "text": "Lillie's Determination: Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead.",
+   "rating": 18.0
   },
   "1239": {
    "id": 1239,
@@ -425,7 +1150,8 @@
    "retreat": 0,
    "aceSpec": false,
    "attacks": [],
-   "text": "Naveen: Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can\u2019t draw any cards in this way, you can\u2019t use this card.)"
+   "text": "Naveen: Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can\u2019t draw any cards in this way, you can\u2019t use this card.)",
+   "rating": 0.0
   }
  },
  "energy_names": {

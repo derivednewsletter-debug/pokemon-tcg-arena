@@ -21,6 +21,7 @@ const APP = {
   busy: false,
   sel: [],
   pick: { human: null, ai: null, diff: null },
+  customDeck: null,
   logRendered: 0,
 };
 
@@ -71,14 +72,13 @@ function renderStart() {
   const dl = $("#deck-list"), al = $("#ai-deck-list"), fl = $("#difficulty-list");
   dl.innerHTML = ""; al.innerHTML = ""; fl.innerHTML = "";
   APP.decks.forEach((d) => {
-    const n = Object.keys(APP.cards).length;
     const cards = (d.cards || []).map((cid) => APP.cards[String(cid)]).filter(Boolean);
     const pokemon = cards.filter((c) => c.type === "pokemon").length;
     const b = el("button", "pick", "");
     b.dataset.id = d.id;
     b.innerHTML = `<span class="pick-name">${esc(d.name)}</span>
       <span class="pick-blurb">${esc(d.blurb || "")}</span>
-      <span class="pick-meta">${pokemon} Pokémon · ${cards.length} cards · ${n} card pool</span>`;
+      <span class="pick-meta">${pokemon} Pokémon · ${cards.length} cards</span>`;
     dl.appendChild(b);
     const b2 = b.cloneNode(true);
     al.appendChild(b2);
@@ -87,6 +87,26 @@ function renderStart() {
     b.onclick = () => { APP.pick.human = d.id; markSelected(dl, d.id); };
     b2.onclick = () => { APP.pick.ai = d.id; markSelected(al, d.id); };
   });
+
+  // builder shortcut tile (human side only)
+  const builderTile = el("button", "pick", "");
+  builderTile.innerHTML = `<span class="pick-name">🎨 Build your own</span>
+    <span class="pick-blurb">Craft any 60-card deck from the full card pool.</span>
+    <span class="pick-meta">opens the deck builder</span>`;
+  builderTile.onclick = () => { window.location.href = "builder.html"; };
+  dl.appendChild(builderTile);
+
+  // saved custom deck tile (if any)
+  APP.customDeck = loadCustomDeck();
+  if (APP.customDeck && APP.customDeck.length) {
+    const t = el("button", "pick", "");
+    t.dataset.id = "custom";
+    t.innerHTML = `<span class="pick-name">🛠 My custom deck</span>
+      <span class="pick-blurb">Your saved 60-card build from the deck builder.</span>
+      <span class="pick-meta">${APP.customDeck.length} cards</span>`;
+    t.onclick = () => { APP.pick.human = "custom"; markSelected(dl, "custom"); };
+    dl.appendChild(t);
+  }
   APP.diffs.forEach((d) => {
     const b = el("button", "pick", "");
     b.dataset.id = d.id;
@@ -96,6 +116,27 @@ function renderStart() {
     if (d.id === APP.pick.diff) b.classList.add("selected");
     b.onclick = () => { APP.pick.diff = d.id; markSelected(fl, d.id); };
   });
+
+  // auto-start from the deck builder ("Save & Battle")
+  if (localStorage.getItem("tcg_auto_start") === "1") {
+    localStorage.removeItem("tcg_auto_start");
+    if (APP.customDeck && APP.customDeck.length) {
+      APP.pick.human = "custom";
+      markSelected(dl, "custom");
+      startGame();
+    }
+  }
+}
+
+function loadCustomDeck() {
+  try {
+    const raw = localStorage.getItem("tcg_custom_deck");
+    if (raw) {
+      const d = JSON.parse(raw);
+      if (Array.isArray(d.cards) && d.cards.length) return d.cards;
+    }
+  } catch (e) { /* ignore */ }
+  return null;
 }
 
 function markSelected(listEl, id) {
@@ -115,14 +156,19 @@ async function startGame() {
   const btn = $("#start-btn");
   btn.disabled = true; btn.textContent = "⏳ Preparing battle…";
   try {
+    const payload = {
+      ai_deck: APP.pick.ai,
+      difficulty: APP.pick.diff,
+    };
+    if (APP.pick.human === "custom" && APP.customDeck && APP.customDeck.length) {
+      payload.custom_deck = APP.customDeck;
+    } else {
+      payload.human_deck = APP.pick.human;
+    }
     const r = await fetch("/api/game/new", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        human_deck: APP.pick.human,
-        ai_deck: APP.pick.ai,
-        difficulty: APP.pick.diff,
-      }),
+      body: JSON.stringify(payload),
     });
     const view = await r.json();
     if (!r.ok) throw new Error(view.error || r.statusText);
@@ -168,6 +214,7 @@ function render(view) {
 }
 
 function deckName(id) {
+  if (id === "custom") return "Your custom deck";
   const d = APP.decks.find((x) => x.id === id);
   return d ? d.name : (id || "");
 }
