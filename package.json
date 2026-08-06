@@ -1,0 +1,9 @@
+{
+  "name": "pokemon-tcg-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Play Pokémon TCG against an engine-search AI that learns from human play.",
+  "engines": {
+    "node": ">=18"
+  }
+}

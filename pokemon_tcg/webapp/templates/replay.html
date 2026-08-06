@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Pokemon TCG &mdash; Match Replay{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>Match Replay</h1>
+    <p class="lead">Step through a completed match. Failure analyzer notes are attached to losing turns.</p>
+  </div>
+  <div class="status-pill">
+    <span class="dot"></span>
+    <span id="replay-meta">loading&hellip;</span>
+  </div>
+</section>
+
+<section class="panel">
+  <header>
+    <h2>Step Controls</h2>
+    <span class="hint">Use the buttons or arrow keys.</span>
+  </header>
+  <div class="controls">
+    <button class="btn" id="btn-prev">&laquo; Prev</button>
+    <button class="btn primary" id="btn-next">Next &raquo;</button>
+    <label class="seed-input">
+      Seed
+      <input type="number" id="seed-input" min="0" placeholder="42" />
+    </label>
+    <button class="btn ghost" id="btn-load">Load</button>
+  </div>
+  <div class="step-counter" id="step-counter">&mdash;</div>
+</section>
+
+<section class="replay-grid">
+  <section class="panel">
+    <header><h2>Board State (P0 / P1)</h2></header>
+    <div class="boards" id="boards"></div>
+  </section>
+  <section class="panel">
+    <header><h2>Event Log</h2></header>
+    <ol class="event-log" id="event-log"></ol>
+  </section>
+  <section class="panel annotations">
+    <header><h2>Failure Annotations</h2></header>
+    <div id="annotations"></div>
+  </section>
+</section>
+
+<script src="{{ url_for('static', filename='replay.js') }}"></script>
+{% endblock %}

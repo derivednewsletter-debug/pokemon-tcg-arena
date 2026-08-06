@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokémon TCG Arena — Play vs the AI</title>
+  <meta name="description" content="Play the Pokémon TCG against an AI agent that searches the real game engine and learns from how humans play.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span class="logo-bolt">⚡</span> TCG&nbsp;ARENA</div>
+    <nav class="nav">
+      <a href="/" class="nav-link active">Play</a>
+      <a href="stats.html" class="nav-link">AI Brain</a>
+      <a href="https://github.com" class="nav-link" id="gh-link" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <!-- ============ START SCREEN ============ -->
+  <section id="start" class="screen">
+    <div class="hero">
+      <h1 class="hero-title">Face the <span class="grad">Engine-Search AI</span></h1>
+      <p class="hero-sub">
+        This AI doesn't play by rules alone — it simulates future moves through the
+        <em>real</em> Pokémon TCG engine, and every game you play teaches it how humans
+        actually behave. Can you beat it before it learns your habits?
+      </p>
+    </div>
+
+    <div class="setup-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>🃏 Your deck</h3>
+          <span class="panel-hint">pick one</span>
+        </div>
+        <div id="deck-list" class="pick-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>🤖 Opponent deck</h3>
+          <span class="panel-hint">the AI pilots it</span>
+        </div>
+        <div id="ai-deck-list" class="pick-list"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>🔥 Difficulty</h3>
+          <span class="panel-hint">lookahead depth</span>
+        </div>
+        <div id="difficulty-list" class="pick-list"></div>
+      </div>
+    </div>
+
+    <button id="start-btn" class="btn-primary btn-big">⚔️ &nbsp;Start Battle</button>
+    <p class="fineprint">
+      Real rules engine · 60-card decks · your moves are anonymized and used to
+      tune the AI's opponent model.
+    </p>
+  </section>
+
+  <!-- ============ GAME SCREEN ============ -->
+  <section id="game" class="screen hidden">
+    <div class="game-head">
+      <button id="quit-btn" class="btn-ghost">✕ Quit</button>
+      <div id="turn-banner" class="turn-banner">Turn 1</div>
+      <div class="game-head-right" id="game-head-right"></div>
+    </div>
+
+    <div class="arena">
+      <div class="board">
+        <!-- opponent -->
+        <div class="zone">
+          <div class="zone-label opp-label">
+            <span class="zone-name">AI</span>
+            <span class="zone-deck" id="ai-deck-name"></span>
+          </div>
+          <div id="ai-active" class="active-slot"></div>
+          <div id="ai-bench" class="bench-row"></div>
+          <div class="pile-row">
+            <div class="pile" id="ai-prizes"><div class="pile-cap">Prize</div></div>
+            <div class="pile" id="ai-deck"><div class="pile-cap">Deck</div></div>
+            <div class="pile" id="ai-discard"><div class="pile-cap">Discard</div></div>
+          </div>
+        </div>
+
+        <!-- middle: log -->
+        <div class="middle">
+          <div class="vs-divider">⚡</div>
+          <div id="log-panel" class="log"></div>
+        </div>
+
+        <!-- human -->
+        <div class="zone">
+          <div class="pile-row top">
+            <div class="pile" id="my-prizes"><div class="pile-cap">Prize</div></div>
+            <div class="pile" id="my-deck"><div class="pile-cap">Deck</div></div>
+            <div class="pile" id="my-discard"><div class="pile-cap">Discard</div></div>
+          </div>
+          <div id="my-active" class="active-slot"></div>
+          <div id="my-bench" class="bench-row"></div>
+          <div class="zone-label my-label">
+            <span class="zone-name">You</span>
+            <span class="zone-deck" id="my-deck-name"></span>
+          </div>
+          <div id="my-hand" class="hand-row"></div>
+        </div>
+      </div>
+
+      <!-- action menu -->
+      <aside class="menu-col" id="menu-col">
+        <div id="menu-panel" class="menu"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ MODAL ============ -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card" id="modal-card"></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>

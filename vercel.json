@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "framework": null,
+  "cleanUrls": true,
+  "functions": {
+    "api/game.py": {
+      "maxDuration": 10
+    },
+    "api/learn.py": {
+      "maxDuration": 10
+    }
+  }
+}

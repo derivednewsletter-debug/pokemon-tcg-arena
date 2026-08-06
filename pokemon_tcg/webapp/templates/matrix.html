@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Pokemon TCG &mdash; Matchup Matrix{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>Matchup Matrix</h1>
+    <p class="lead">Win-rate heatmap. Row agent&rsquo;s score against column agent.</p>
+  </div>
+  <div class="status-pill">
+    <span class="dot"></span>
+    <span>Pairwise</span>
+  </div>
+</section>
+
+<section class="panel">
+  <header>
+    <h2>Win % (row beats column)</h2>
+  </header>
+  <div id="matrix-wrap" class="matrix-wrap"></div>
+  <div class="legend">
+    <span class="legend-cell cool"></span>0-30% (cold)
+    <span class="legend-cell mid"></span>30-50%
+    <span class="legend-cell warm"></span>50-70%
+    <span class="legend-cell hot"></span>70-100% (dominant)
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='matrix.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Pokemon TCG &mdash; Elo Leaderboard{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>Tournament Director Dashboard</h1>
+    <p class="lead">Elo ratings, win rates, and matchup metrics across all benchmark agents.</p>
+  </div>
+  <div class="status-pill">
+    <span class="dot pulse"></span>
+    <span>Live data</span>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="stat-card">
+    <div class="stat-label">Top Agent</div>
+    <div class="stat-value" id="stat-topagent">&mdash;</div>
+    <div class="stat-sub" id="stat-topagent-sub">loading&hellip;</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Agents Compared</div>
+    <div class="stat-value" id="stat-count">&mdash;</div>
+    <div class="stat-sub">registered heuristics</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Games Played</div>
+    <div class="stat-value" id="stat-games">&mdash;</div>
+    <div class="stat-sub">from the most recent tournament</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Matchup Spread</div>
+    <div class="stat-value" id="stat-spread">&mdash;</div>
+    <div class="stat-sub">highest &minus; lowest Elo</div>
+  </div>
+</section>
+
+<section class="panel">
+  <header>
+    <h2>Elo Leaderboard</h2>
+    <button class="btn ghost" id="btn-refresh">Refresh</button>
+  </header>
+  <div class="agent-rows" id="agent-rows"></div>
+</section>
+
+<section class="panel">
+  <header>
+    <h2>Win Rate Bars</h2>
+    <span class="hint">vs every other agent</span>
+  </header>
+  <div class="winrate-grid" id="winrate-grid"></div>
+</section>
+
+<script src="{{ url_for('static', filename='leaderboard.js') }}"></script>
+{% endblock %}

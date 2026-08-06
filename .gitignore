@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# macOS
+.DS_Store
+
+# Heavy / regenerable (Card_ID reference PDFs — re-extract from the
+# competition zip if needed)
+*.pdf
+results/
+
+# Local tooling
+.vercel/
+.env
+*.log

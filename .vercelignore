@@ -1,0 +1,27 @@
+# Not needed at runtime on Vercel
+*.pdf
+results/
+.venv/
+__pycache__/
+tests/
+notebooks/
+pokemon_tcg/
+docs/
+scripts/
+tools/sweep_round*.py
+tools/stress_*.py
+tools/bisect_tiers.py
+tools/ab_planner.py
+tools/gen_ground_truth.py
+tools/replay_benchmark.py
+tools/build_submission.py
+tools/verify_kaggle_replay.py
+tools/deck_analysis.py
+tools/card_details.py
+tools/scan_attackers.py
+tools/scan_deck_build.py
+tools/probe_*.py
+tools/debug_*.py
+tools/stats_games.py
+tools/deck_variants.py
+tools/selfplay.py

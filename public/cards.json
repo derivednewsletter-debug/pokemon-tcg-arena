@@ -1,0 +1,445 @@
+{
+ "cards": {
+  "3": {
+   "id": 3,
+   "name": "Basic {W} Energy",
+   "type": "energy",
+   "energyType": 3,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": ""
+  },
+  "6": {
+   "id": 6,
+   "name": "Basic {F} Energy",
+   "type": "energy",
+   "energyType": 6,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": ""
+  },
+  "105": {
+   "id": 105,
+   "name": "Finizen",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 70,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Aqua Slash",
+     "damage": 30,
+     "cost": [
+      3
+     ],
+     "text": "During your next turn, this Pok\u00e9mon can\u2019t use attacks."
+    }
+   ],
+   "text": ""
+  },
+  "106": {
+   "id": 106,
+   "name": "Palafin",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 100,
+   "stage": "stage1",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": "Finizen",
+   "retreat": 1,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Wave Splash",
+     "damage": 30,
+     "cost": [
+      3,
+      0
+     ],
+     "text": ""
+    }
+   ],
+   "text": "Zero to Hero: Once during your turn, when this Pok\u00e9mon moves from the Active Spot to the Bench, you may search your deck for a Palafin {ex} and switch it with this Pok\u00e9mon. Any attached cards, damage counters, Special Co"
+  },
+  "107": {
+   "id": 107,
+   "name": "Palafin ex",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 340,
+   "stage": "stage1",
+   "ex": true,
+   "mega": false,
+   "evolvesFrom": "Finizen",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Giga Impact",
+     "damage": 250,
+     "cost": [
+      3
+     ],
+     "text": "During your next turn, this Pok\u00e9mon can\u2019t use attacks."
+    }
+   ],
+   "text": "Hero\u2019s Spirit: Put this Pok\u00e9mon into play only with the effect of Palafin\u2019s Zero to Hero Ability."
+  },
+  "677": {
+   "id": 677,
+   "name": "Riolu",
+   "type": "pokemon",
+   "energyType": 6,
+   "hp": 80,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Accelerating Stab",
+     "damage": 30,
+     "cost": [
+      6
+     ],
+     "text": "During your next turn, this Pok\u00e9mon can\u2019t use Accelerating Stab."
+    }
+   ],
+   "text": ""
+  },
+  "678": {
+   "id": 678,
+   "name": "Mega Lucario ex",
+   "type": "pokemon",
+   "energyType": 6,
+   "hp": 340,
+   "stage": "stage1",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Riolu",
+   "retreat": 2,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Aura Jab",
+     "damage": 130,
+     "cost": [
+      6
+     ],
+     "text": "Attach up to 3 Basic {F} Energy cards from your discard pile to your Benched Pok\u00e9mon in any way you like."
+    },
+    {
+     "name": "Mega Brave",
+     "damage": 270,
+     "cost": [
+      6,
+      6
+     ],
+     "text": "During your next turn, this Pok\u00e9mon can\u2019t use Mega Brave."
+    }
+   ],
+   "text": ""
+  },
+  "721": {
+   "id": 721,
+   "name": "Kyogre",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 150,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 3,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Riptide",
+     "damage": 0,
+     "cost": [
+      3
+     ],
+     "text": "This attack does 20 damage for each Basic {W} Energy card in your discard pile. Then, shuffle those cards into your deck."
+    },
+    {
+     "name": "Swirling Waves",
+     "damage": 130,
+     "cost": [
+      3,
+      3,
+      0
+     ],
+     "text": "Discard 2 Energy from this Pok\u00e9mon."
+    }
+   ],
+   "text": ""
+  },
+  "722": {
+   "id": 722,
+   "name": "Snover",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 90,
+   "stage": "basic",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 3,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Beat",
+     "damage": 10,
+     "cost": [
+      3
+     ],
+     "text": ""
+    },
+    {
+     "name": "Icy Snow",
+     "damage": 30,
+     "cost": [
+      3,
+      3
+     ],
+     "text": ""
+    }
+   ],
+   "text": ""
+  },
+  "723": {
+   "id": 723,
+   "name": "Mega Abomasnow ex",
+   "type": "pokemon",
+   "energyType": 3,
+   "hp": 350,
+   "stage": "stage1",
+   "ex": false,
+   "mega": true,
+   "evolvesFrom": "Snover",
+   "retreat": 4,
+   "aceSpec": false,
+   "attacks": [
+    {
+     "name": "Hammer-lanche",
+     "damage": 0,
+     "cost": [
+      3,
+      3
+     ],
+     "text": "Discard the top 6 cards of your deck, and this attack does 100 damage for each Basic {W} Energy card that you discarded in this way."
+    },
+    {
+     "name": "Frost Barrier",
+     "damage": 200,
+     "cost": [
+      3,
+      3,
+      3
+     ],
+     "text": "During your opponent\u2019s next turn, this Pok\u00e9mon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+    }
+   ],
+   "text": ""
+  },
+  "1077": {
+   "id": 1077,
+   "name": "Roto-Stick",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Roto-Stick: Look at the top 4 cards of your deck. You may reveal any number of Supporter cards you find there and put them into your hand. Shuffle the other cards back into your deck."
+  },
+  "1082": {
+   "id": 1082,
+   "name": "Hyper Aroma",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": true,
+   "attacks": [],
+   "text": "Hyper Aroma: Search your deck for up to 3 Stage 1 Pok\u00e9mon, reveal them, and put them into your hand. Then, shuffle your deck."
+  },
+  "1086": {
+   "id": 1086,
+   "name": "Buddy-Buddy Poffin",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Buddy-Buddy Poffin: Search your deck for up to 2 Basic Pok\u00e9mon with 70 HP or less and put them onto your Bench. Then, shuffle your deck."
+  },
+  "1102": {
+   "id": 1102,
+   "name": "Dusk Ball",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Dusk Ball: Look at the bottom 7 cards of your deck. You may reveal a Pok\u00e9mon you find there and put it into your hand. Shuffle the other cards back into your deck."
+  },
+  "1119": {
+   "id": 1119,
+   "name": "Energy Search",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Energy Search: Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck."
+  },
+  "1121": {
+   "id": 1121,
+   "name": "Ultra Ball",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Ultra Ball: You can use this card only if you discard 2 other cards from your hand.\n\nSearch your deck for a Pok\u00e9mon, reveal it, and put it into your hand. Then, shuffle your deck."
+  },
+  "1122": {
+   "id": 1122,
+   "name": "Pok\u00e9gear 3.0",
+   "type": "item",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Pok\u00e9gear 3.0: Look at the top 7 cards of your deck. You may reveal a Supporter card you find there and put it into your hand. Shuffle the other cards back into your deck."
+  },
+  "1156": {
+   "id": 1156,
+   "name": "Lucky Helmet",
+   "type": "tool",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Lucky Helmet: If the Pok\u00e9mon this card is attached to is in the Active Spot and is damaged by an attack from your opponent\u2019s Pok\u00e9mon (even if this Pok\u00e9mon is Knocked Out), draw 2 cards."
+  },
+  "1192": {
+   "id": 1192,
+   "name": "Carmine",
+   "type": "supporter",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Carmine: If you go first, you may use this card during your first turn.\n\nDiscard your hand and draw 5 cards."
+  },
+  "1227": {
+   "id": 1227,
+   "name": "Lillie's Determination",
+   "type": "supporter",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Lillie's Determination: Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead."
+  },
+  "1239": {
+   "id": 1239,
+   "name": "Naveen",
+   "type": "supporter",
+   "energyType": 0,
+   "hp": 0,
+   "stage": "",
+   "ex": false,
+   "mega": false,
+   "evolvesFrom": null,
+   "retreat": 0,
+   "aceSpec": false,
+   "attacks": [],
+   "text": "Naveen: Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can\u2019t draw any cards in this way, you can\u2019t use this card.)"
+  }
+ },
+ "energy_names": {
+  "0": "colorless",
+  "1": "grass",
+  "2": "fire",
+  "3": "water",
+  "4": "lightning",
+  "5": "psychic",
+  "6": "fighting",
+  "7": "darkness",
+  "8": "metal",
+  "9": "dragon",
+  "10": "rainbow",
+  "11": "team_rocket"
+ }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Brain — Pokémon TCG Arena</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo"><span class="logo-bolt">⚡</span> TCG&nbsp;ARENA</div>
+    <nav class="nav">
+      <a href="/" class="nav-link">Play</a>
+      <a href="stats.html" class="nav-link active">AI Brain</a>
+    </nav>
+  </header>
+
+  <section class="screen">
+    <div class="hero">
+      <h1 class="hero-title">What the AI has <span class="grad">learned</span></h1>
+      <p class="hero-sub">
+        Every finished game is turned into an <em>opponent profile</em>. The AI's
+        lookahead uses those tendencies to predict how a human will reply — so the
+        more people play, the better it plans against them.
+      </p>
+    </div>
+
+    <div class="stats-grid" id="stat-cards"></div>
+
+    <div class="panel" style="margin-bottom:16px">
+      <div class="panel-head"><h3>📊 How humans play (action distribution)</h3></div>
+      <div id="action-bars"></div>
+    </div>
+
+    <div class="setup-grid" style="grid-template-columns:1fr 1fr">
+      <div class="panel">
+        <div class="panel-head"><h3>🌅 Typical first move</h3></div>
+        <div id="openers"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>🃏 Decks humans choose</h3></div>
+        <div id="deck-bars"></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <div class="panel-head"><h3>🕘 Recent games</h3></div>
+      <div class="table-wrap"><table id="recent-table"></table></div>
+      <div id="recent-empty"></div>
+    </div>
+
+    <div class="learn-flow">
+      <div class="learn-step">
+        <div class="step-ico">🎮</div>
+        <h4>1 · You play</h4>
+        <p>Every MAIN decision you make — attack, supporter, retreat, end turn —
+          is recorded (anonymized, no personal data) along with who won.</p>
+      </div>
+      <div class="learn-step">
+        <div class="step-ico">🧮</div>
+        <h4>2 · The AI aggregates</h4>
+        <p>Your tendencies are folded into an opponent profile: aggression,
+          retreat frequency, opener habits, deck preferences.</p>
+      </div>
+      <div class="learn-step">
+        <div class="step-ico">🔮</div>
+        <h4>3 · It plans against you</h4>
+        <p>Inside engine-search lookahead, the simulated opponent now behaves like
+          the humans it has seen — so the AI values moves that beat human habits.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="stats.js"></script>
+</body>
+</html>
